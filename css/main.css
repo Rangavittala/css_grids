@@ -5,6 +5,50 @@ body, html {
   background-color: azure;
 }
 
+.brand::before {
+  content: 'Chitravina ';
+  color: maroon;
+  font-size: 1.2em;
+  font-family: cursive;
+  padding: 5px;
+  margin-left: 40px;
+}
+
+p {
+  padding-left: 30px;
+}
+
+a[data-tool-tip] {
+  position: relative;
+}
+
+a[data-tool-tip]::after {
+  content: attr(data-tool-tip);
+  display: block;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5em 0.5em;
+  color: white;
+  border-radius: 5px;
+  font-size: .8em;
+  font-weight: bolder;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: bottom ease-out 150ms, -webkit-transform ease-out 150ms;
+  transition: bottom ease-out 150ms, -webkit-transform ease-out 150ms;
+  transition: transform ease-out 150ms, bottom ease-out 150ms;
+  transition: transform ease-out 150ms, bottom ease-out 150ms, -webkit-transform ease-out 150ms;
+}
+
+a[data-tool-tip]:hover::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  bottom: 100%;
+}
+
 .grid-container {
   display: -ms-grid;
   display: grid;
@@ -22,8 +66,6 @@ section.top {
   -ms-grid-column: 1;
   grid-area: top;
   background-color: cornsilk;
-  display: -ms-grid;
-  display: grid;
 }
 
 section.bottom {

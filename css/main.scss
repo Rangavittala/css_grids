@@ -1,9 +1,47 @@
+$clr-gray: rgba(black, .7);
 body,html{
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 100vh;
     background-color: azure;
 }
+.brand::before{
+    content: 'Chitravina ';
+    color: maroon;
+    font-size: 1.2em;
+    font-family: cursive;
+    padding: 5px;
+    margin-left: 40px;
+}
+p{
+    padding-left: 30px;
+}
+a[data-tool-tip]{
+    position: relative;
+}
+a[data-tool-tip]::after {
+    content: attr(data-tool-tip);
+    display: block;
+    position: absolute;
+    background-color: $clr-gray;
+    padding: 0.5em 0.5em;
+    color: white;
+    border-radius: 5px;
+    font-size: .8em;
+    font-weight: bolder;
+    bottom: 0;
+    left: 0;
+    white-space: nowrap;
+    transform: scale(0);
+    transition:
+      transform ease-out 150ms,
+      bottom ease-out 150ms;
+  }
+  
+  a[data-tool-tip]:hover::after {
+    transform: scale(1);
+    bottom: 100%;
+  }
 .grid-container{
     display: grid;
     grid-template-columns: auto;
@@ -19,7 +57,6 @@ body,html{
 section.top{
     grid-area: top;
     background-color: cornsilk;
-    display: grid;
 }
 section.bottom{
     grid-area: bottom;
