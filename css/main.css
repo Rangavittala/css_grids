@@ -1,0 +1,63 @@
+body, html {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+  background-color: azure;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: 0.2fr 2.5fr 1fr;
+      grid-template-rows: 0.2fr 2.5fr 1fr;
+      grid-template-areas: "header" "image" "top" "bottom";
+  height: 100vh;
+  margin: 0;
+}
+
+section.top {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: top;
+  background-color: cornsilk;
+  display: -ms-grid;
+  display: grid;
+}
+
+section.bottom {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: bottom;
+  background-color: darkcyan;
+}
+
+section.image {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: image;
+  background: url("/images/nravikiran.jpg");
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  background-color: aliceblue;
+}
+
+@media screen and (min-width: 540px) {
+  .grid-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2.2fr 1fr;
+        grid-template-columns: 2.2fr 1fr;
+    -ms-grid-rows: 0.5fr 4fr 1fr;
+        grid-template-rows: 0.5fr 4fr 1fr;
+        grid-template-areas: "top header" "top image" "bottom image";
+    height: 100vh;
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */
